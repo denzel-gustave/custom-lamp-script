@@ -1,0 +1,100 @@
+#!/bin/bash
+
+# Update package manager
+sudo apt-get update
+
+# Install Apache 2
+sudo apt-get install apache2 -y
+
+# Install MySQL 5
+#sudo apt-get install mysql-server-5.7 -y
+
+#############################################################################################################################################################
+
+# Check if PHP 7.4 is installed
+if ! [ -x "$(command -v php7.4)" ]; then
+  # Disable current PHP version
+  sudo a2dismod php*
+
+  # Install PHP 7.4
+  #sudo apt-get update
+  #sudo apt-get install -y php7.4
+
+  #install software-properties-common, which adds management for additional software sources:
+  sudo apt -y install software-properties-common
+
+  #install the repository ppa:ondrej/php, which will give you all your versions of PHP:
+  sudo add-apt-repository ppa:ondrej/php
+
+  #If you are using apache2, you are advised to add ppa:ondrej/apache2
+  sudo add-apt-repository ppa:ondrej/apache2
+
+  #update apt-get again so your package manager can see the newly listed packages:
+  sudo apt-get update
+
+  #install PHP 7.4 using the following command:
+  sudo apt -y install php7.4
+
+  #Check the version installed:
+  php -v
+
+  #suggestions of the most common modules you will most likely want to install:
+  sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
+
+  # Install PHP 7.4 and required extensions
+  sudo apt-get install php7.4 php7.4-cli php7.4-mysql php7.4-curl php7.4-json php7.4-cgi php7.4-intl -y
+
+  # Enable PHP 7.4
+  sudo a2enmod php7.4
+
+  echo "PHP 7.4 has been installed and enabled."
+else
+  echo "PHP 7.4 is already installed."
+fi
+
+#############################################################################################################################################################
+
+# Install Mod Rewrite
+sudo a2enmod rewrite
+
+# Restart Apache
+sudo service apache2 restart
+
+# Install PhpMyAdmin
+sudo apt-get install phpmyadmin -y
+
+# Configure Apache for PhpMyAdmin
+#sudo echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+
+# Restart Apache
+sudo service apache2 restart
+
+echo "eMagine LAMP Stack preparation script"
+
+
+
+#List php versions installed on machine
+sudo update-alternatives --list php
+
+#Disable current PHP versions
+sudo a2dismod php*
+
+#Enable PHP 7.4
+sudo a2enmod php7.4
+
+#Set PHP 7.4 as default version
+sudo update-alternatives --set php /usr/bin/php7.4
+
+#Alternatively, you can run the following command to set which system wide version of PHP you want to use by default.
+#sudo update-alternatives --config php
+
+#If you have installed other PHP extensions, set them as default as well.
+#sudo update-alternatives --set phar /usr/bin/phar5.6
+
+#Restart Apache web server
+sudo systemctl restart apache2
+
+#Verify PHP 7.4 is the default version
+php -v
+
+echo "LAMP installations complete!"
