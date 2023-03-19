@@ -10,7 +10,6 @@ sudo apt-get install apache2 -y
 #sudo apt-get install mysql-server-5.7 -y
 
 #############################################################################################################################################################
-
 # Check if PHP 7.4 is installed
 if ! [ -x "$(command -v php7.4)" ]; then
   # Disable current PHP version
@@ -51,7 +50,6 @@ if ! [ -x "$(command -v php7.4)" ]; then
 else
   echo "PHP 7.4 is already installed."
 fi
-
 #############################################################################################################################################################
 
 # Install Mod Rewrite
@@ -68,9 +66,6 @@ sudo apt-get install phpmyadmin -y
 
 # Restart Apache
 sudo service apache2 restart
-
-echo "eMagine LAMP Stack preparation script"
-
 
 
 #List php versions installed on machine
