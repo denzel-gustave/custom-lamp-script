@@ -10,14 +10,14 @@ sudo apt-get install apache2 -y
 #sudo apt-get install mysql-server-5.7 -y
 
 #############################################################################################################################################################
-# Check if PHP 7.4 is installed
-if ! [ -x "$(command -v php7.4)" ]; then
+# Check if PHP 7.2 is installed
+if ! [ -x "$(command -v php7.2)" ]; then
   # Disable current PHP version
   sudo a2dismod php*
 
-  # Install PHP 7.4
+  # Install PHP 7.2
   #sudo apt-get update
-  #sudo apt-get install -y php7.4
+  #sudo apt-get install -y php7.2
 
   #install software-properties-common, which adds management for additional software sources:
   sudo apt -y install software-properties-common
@@ -31,24 +31,24 @@ if ! [ -x "$(command -v php7.4)" ]; then
   #update apt-get again so your package manager can see the newly listed packages:
   sudo apt-get update
 
-  #install PHP 7.4 using the following command:
-  sudo apt -y install php7.4
+  #install PHP 7.2 using the following command:
+  sudo apt -y install php7.2
 
   #Check the version installed:
   php -v
 
   #suggestions of the most common modules you will most likely want to install:
-  sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
+  sudo apt-get install -y php7.2-cli php7.2-json php7.2-common php7.2-mysql php7.2-zip php7.2-gd php7.2-mbstring php7.2-curl php7.2-xml php7.2-bcmath
 
-  # Install PHP 7.4 and required extensions
-  sudo apt-get install php7.4 php7.4-cli php7.4-mysql php7.4-curl php7.4-json php7.4-cgi php7.4-intl -y
+  # Install PHP 7.2 and required extensions
+  sudo apt-get install php7.2 php7.2-cli php7.2-mysql php7.2-curl php7.2-json php7.2-cgi php7.2-intl -y
 
-  # Enable PHP 7.4
-  sudo a2enmod php7.4
+  # Enable PHP 7.2
+  sudo a2enmod php7.2
 
-  echo "PHP 7.4 has been installed and enabled."
+  echo "PHP 7.2 has been installed and enabled."
 else
-  echo "PHP 7.4 is already installed."
+  echo "PHP 7.2 is already installed."
 fi
 #############################################################################################################################################################
 
@@ -74,11 +74,11 @@ sudo update-alternatives --list php
 #Disable current PHP versions
 sudo a2dismod php*
 
-#Enable PHP 7.4
-sudo a2enmod php7.4
+#Enable PHP 7.2
+sudo a2enmod php7.2
 
-#Set PHP 7.4 as default version
-sudo update-alternatives --set php /usr/bin/php7.4
+#Set PHP 7.2 as default version
+sudo update-alternatives --set php /usr/bin/php7.2
 
 #Alternatively, you can run the following command to set which system wide version of PHP you want to use by default.
 #sudo update-alternatives --config php
@@ -89,7 +89,7 @@ sudo update-alternatives --set php /usr/bin/php7.4
 #Restart Apache web server
 sudo systemctl restart apache2
 
-#Verify PHP 7.4 is the default version
+#Verify PHP 7.2 is the default version
 php -v
 
 echo "LAMP installations complete!"
