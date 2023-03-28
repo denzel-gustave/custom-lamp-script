@@ -1,6 +1,6 @@
 #!/bin/bash
 
-**********************************************************************************
+####################################################################################
 # Install PHP and required extensions
 #sudo apt-get update
 #sudo apt-get install -y php7.3 php7.3-bcmath php7.3-ctype php7.3-fileinfo php7.3-json php7.3-mbstring php7.3-opcache php7.3-pdo php7.3-tokenizer php7.3-xml php7.3-pgsql
@@ -66,7 +66,7 @@ sudo update-alternatives --set php /usr/bin/php7.3
 php -v
 
 echo "PHP 7.3 and required extensions successfully installed"
-**********************************************************************************
+###################################################################################################
 
 # Install PostgreSQL
 sudo apt-get install -y postgresql postgresql-contrib
