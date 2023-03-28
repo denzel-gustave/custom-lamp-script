@@ -15,23 +15,23 @@
   #update apt-get again so your package manager can see the newly listed packages:
   sudo apt-get update
 
-  #install PHP 7.3 using the following command:
-  sudo apt -y install php7.3
+  #install PHP 8.1 using the following command:
+  sudo apt -y install php8.1
 
   #Check the version installed:
   php -v
 
   #required php extensions for ilearn-developer
-  sudo apt-get install -y php7.3 php7.3-bcmath php7.3-ctype php7.3-fileinfo php7.3-json php7.3-mbstring php7.3-opcache php7.3-pdo php7.3-tokenizer php7.3-xml php7.3-pgsql
+  sudo apt-get install -y php8.1 php8.1-bcmath php8.1-ctype php8.1-fileinfo php8.1-json php8.1-mbstring php8.1-opcache php8.1-pdo php8.1-tokenizer php8.1-xml php8.1-pgsql
 
   #suggestions of the most common modules you will most likely want to install:
-  sudo apt-get install -y php7.3-cli php7.3-json php7.3-common php7.3-mysql php7.3-zip php7.3-gd php7.3-mbstring php7.3-curl php7.3-xml php7.3-bcmath
+  sudo apt-get install -y php8.1-cli php8.1-json php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
 
-  # Install PHP 7.3 and required extensions
-  sudo apt-get install php7.3 php7.3-cli php7.3-mysql php7.3-curl php7.3-json php7.3-cgi php7.3-intl -y
+  # Additional PHP extensions
+  sudo apt-get install php8.1-cgi php8.1-intl -y
 
-  # Enable PHP 7.3
-  sudo a2enmod php7.3
+  # Enable PHP 8.1
+  sudo a2enmod php8.1
 
 
 #List php versions installed on machine
@@ -40,11 +40,11 @@ sudo update-alternatives --list php
 #Disable current PHP versions
 sudo a2dismod php*
 
-#Enable PHP 7.3
-sudo a2enmod php7.3
+#Enable PHP 8.1
+sudo a2enmod php8.1
 
-#Set PHP 7.3 as default version
-sudo update-alternatives --set php /usr/bin/php7.3
+#Set PHP 8.1 as default version
+sudo update-alternatives --set php /usr/bin/php8.1
 
 #Alternatively, you can run the following command to set which system wide version of PHP you want to use by default.
 #sudo update-alternatives --config php
@@ -52,10 +52,10 @@ sudo update-alternatives --set php /usr/bin/php7.3
 #If you have installed other PHP extensions, set them as default as well.
 #sudo update-alternatives --set phar /usr/bin/phar5.6
 
-#Verify PHP 7.3 is the default version
+#Verify PHP 8.1 is the default version
 php -v
 
-echo "PHP 7.3 and required extensions successfully installed"
+echo "PHP 8.1 and required extensions successfully installed"
 ###################################################################################################
 
 # Install PostgreSQL
