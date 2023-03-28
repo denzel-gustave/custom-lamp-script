@@ -22,10 +22,10 @@
   php -v
 
   #required php extensions for ilearn-developer
-  sudo apt-get install -y php8.1 php8.1-bcmath php8.1-ctype php8.1-fileinfo php8.1-json php8.1-mbstring php8.1-opcache php8.1-pdo php8.1-tokenizer php8.1-xml php8.1-pgsql
+  sudo apt-get install -y php8.1-bcmath php8.1-ctype php8.1-fileinfo php8.1-json php8.1-mbstring php8.1-opcache php8.1-pdo php8.1-tokenizer php8.1-xml php8.1-pgsql
 
   #suggestions of the most common modules you will most likely want to install:
-  sudo apt-get install -y php8.1-cli php8.1-json php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
+  sudo apt-get install -y php8.1-cli php8.1-common php8.1-zip php8.1-gd php8.1-curl
 
   # Additional PHP extensions
   sudo apt-get install php8.1-cgi php8.1-intl -y
